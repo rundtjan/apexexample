@@ -1,0 +1,23 @@
+{
+  "name": "apexsample",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rujaraju/apexchartssample.git"
+  },
+    "dependencies": {
+    "express": "^4.17.1",
+    "mongodb": "^2.2.36"
+  },
+  "author": "JR",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rujaraju/apexchartssample/issues"
+  },
+  "homepage": "https://github.com/rujaraju/apexchartssample#readme"
+}
