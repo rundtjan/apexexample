@@ -47,3 +47,7 @@
 	.container.big-container {
     max-width: 100%; }
 }
+
+.btn-link {
+	 color: #107527;
+}

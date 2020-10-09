@@ -1,3 +1,8 @@
+var chart1
+var chart2
+var chart3
+var chart1promise
+
 function apex() {
 
     var options1 = {
@@ -8,9 +13,9 @@ function apex() {
             },
         },
         chart: {
-            /*animations: {
+            animations: {
               enabled: false
-            },*/
+            },
             toolbar: {
                 show: true,
                 offsetX: 0,
@@ -72,9 +77,10 @@ function apex() {
         }
     }
 
-    var chart1 = new ApexCharts(document.querySelector("#chart1"), options1);
+    chart1 = new ApexCharts(document.querySelector("#chart1"), options1);
+    console.log(chart1.paper())
 
-    chart1.render();
+    chart1promise = chart1.render()
 
     var options2 = {
         series: [{
@@ -117,7 +123,7 @@ function apex() {
         colors: ['#107527']
     };
 
-    var chart2 = new ApexCharts(document.querySelector("#chart2"), options2);
+    chart2 = new ApexCharts(document.querySelector("#chart2"), options2);
     chart2.render();
 
     var options3 = {
@@ -175,7 +181,16 @@ function apex() {
         colors: ['#107527', '#b5d065']
     };
 
-    var chart3 = new ApexCharts(document.querySelector("#chart3"), options3);
+    chart3 = new ApexCharts(document.querySelector("#chart3"), options3);
     chart3.render();
+}
 
+function download1(){
+        chart1promise.then(() => {
+        chart1.dataURI().then(({ imgURI, blob }) => { //Here shows error
+        var pdf = new jsPDF('l', 'mm', [200, 150]);
+        pdf.addImage(imgURI, 'PNG', 0, 0);
+        pdf.save("answerpercentage.pdf");
+        })
+    })
 }
