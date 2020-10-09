@@ -2,6 +2,7 @@ var chart1
 var chart2
 var chart3
 var chart1promise
+var chart2promise
 
 function apex() {
 
@@ -78,7 +79,6 @@ function apex() {
     }
 
     chart1 = new ApexCharts(document.querySelector("#chart1"), options1);
-    console.log(chart1.paper())
 
     chart1promise = chart1.render()
 
@@ -88,7 +88,7 @@ function apex() {
             data: [45, 48, 55, 61, 72, 80]
         }],
         chart: {
-            height: '100%',
+            height: '250px',
             type: 'line',
             zoom: {
                 enabled: false
@@ -124,7 +124,7 @@ function apex() {
     };
 
     chart2 = new ApexCharts(document.querySelector("#chart2"), options2);
-    chart2.render();
+    chart2promise = chart2.render();
 
     var options3 = {
         series: [80, 20],
@@ -191,6 +191,16 @@ function download1(){
         var pdf = new jsPDF('l', 'mm', [200, 150]);
         pdf.addImage(imgURI, 'PNG', 0, 0);
         pdf.save("answerpercentage.pdf");
+        })
+    })
+}
+
+function download2(){
+        chart2promise.then(() => {
+        chart2.dataURI().then(({ imgURI, blob }) => { //Here shows error
+        var pdf = new jsPDF('l', 'mm', [200, 195]);
+        pdf.addImage(imgURI, 'PNG', 0, 0);
+        pdf.save("yearlydevelopment.pdf");
         })
     })
 }

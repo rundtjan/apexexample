@@ -1,7 +1,7 @@
 .infocard {
 	display: block;
 	width: 100%;
-	height: 250px;
+	min-height: 300px;
 	background-color: white;
 }
 
@@ -49,5 +49,9 @@
 }
 
 .btn-link {
+	 color: #107527;
+}
+
+.btn-link:hover {
 	 color: #107527;
 }
