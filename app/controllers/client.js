@@ -129,7 +129,7 @@ function apex() {
     var options3 = {
         series: [80, 20],
         chart: {
-            height: '100%',
+            height: '250px',
             type: 'donut',
                         toolbar: {
                 show: true,
@@ -188,7 +188,7 @@ function apex() {
 function download1(){
         chart1promise.then(() => {
         chart1.dataURI().then(({ imgURI, blob }) => { //Here shows error
-        var pdf = new jsPDF('l', 'mm', [200, 150]);
+        var pdf = new jsPDF('l', 'mm', [300, 220]);
         pdf.addImage(imgURI, 'PNG', 0, 0);
         pdf.save("answerpercentage.pdf");
         })
@@ -198,7 +198,7 @@ function download1(){
 function download2(){
         chart2promise.then(() => {
         chart2.dataURI().then(({ imgURI, blob }) => { //Here shows error
-        var pdf = new jsPDF('l', 'mm', [280, 195]);
+        var pdf = new jsPDF('l', 'mm', [300, 195]);
         pdf.addImage(imgURI, 'PNG', 0, 0);
         pdf.save("yearlydevelopment.pdf");
         })
