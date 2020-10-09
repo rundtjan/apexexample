@@ -198,7 +198,7 @@ function download1(){
 function download2(){
         chart2promise.then(() => {
         chart2.dataURI().then(({ imgURI, blob }) => { //Here shows error
-        var pdf = new jsPDF('l', 'mm', [210, 195]);
+        var pdf = new jsPDF('l', 'mm', [250, 195]);
         pdf.addImage(imgURI, 'PNG', 0, 0);
         pdf.save("yearlydevelopment.pdf");
         })
